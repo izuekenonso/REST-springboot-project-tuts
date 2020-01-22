@@ -21,7 +21,7 @@ public class UserCommandLineRunner implements CommandLineRunner{
 		repository.save(new User("Dimeji", "Admin"));
 		repository.save(new User("Onyinyechi", "User"));
 		
-		for (User user : repository.findAll()) {
+		for (User user : repository.findByRole("Admin")) {
 			log.info(user.toString());
 		}
 	}
